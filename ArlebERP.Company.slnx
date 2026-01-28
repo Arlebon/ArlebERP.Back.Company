@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ArlebERP.Company.API/ArlebERP.Company.API.csproj" />
+  <Project Path="ArlebERP.Company.BLL/ArlebERP.Company.BLL.csproj" Id="d20e5569-89a9-45ad-b3ba-17633609684f" />
+  <Project Path="ArlebERP.Company.DAL/ArlebERP.Company.DAL.csproj" Id="5fb4ebc4-0068-4c2c-b167-9aee3501ca06" />
+  <Project Path="ArlebERP.Company.DL/ArlebERP.Company.DL.csproj" Id="4bb81624-b31b-4df8-a2ce-8587aff6d055" />
+</Solution>
