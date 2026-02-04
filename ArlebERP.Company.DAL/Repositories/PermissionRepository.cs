@@ -8,8 +8,8 @@ using System.Text;
 
 namespace ArlebERP.Company.DAL.Repositories
 {
-    public class CompanyRoleRepository : BaseRepository<CompanyRole>, ICompanyRoleRepository
+    public class PermissionRepository : BaseRepository<Permission>, IPermissionRepository
     {
-        public CompanyRoleRepository(ArlebERPCompanyContext context) : base(context) { }
+        public PermissionRepository(ArlebERPCompanyContext context) : base(context) { }
     }
 }

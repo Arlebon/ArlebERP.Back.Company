@@ -1,14 +1,41 @@
-﻿using ArlebERP.Company.BLL.Services;
+﻿using ArlebERP.Company.API.Mappers;
+using ArlebERP.Company.API.Models.Global;
+using ArlebERP.Company.BLL.Services.Interfaces;
+using ArlebERP.Company.DL.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace ArlebERP.Company.API.Controllers
 {
-    public class CompanyController
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CompanyController : ControllerBase
     {
-        private readonly CompanyService _companyService;
+        private readonly ICompanyService _companyService;
 
-        public CompanyController(CompanyService companyService)
+        public CompanyController(ICompanyService companyService)
         {
             _companyService = companyService;
+        }
+
+        [HttpPost("create-company")]
+        [Authorize]
+        public ActionResult CreateCompany([FromBody] GlobalCreateFormDTO form)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            int userId = int.Parse(User.FindFirstValue(ClaimTypes.Sid)!);
+            Employee employee = form.adminForm.ToEmployee();
+            employee.UserId = userId;
+
+            _companyService.Create(form.companyForm.ToCompany(), employee);
+
+            return Created();
         }
     }
 }

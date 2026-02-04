@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ArlebERP.Company.DAL\ArlebERP.Company.DAL.csproj" />
+    <ProjectReference Include="..\ArlebERP.Company.DL\ArlebERP.Company.DL.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -12,6 +12,10 @@ namespace ArlebERP.Company.DL.Entities
 
         public string VatNumber { get; set; } = null!;
 
+        public string Email { get; set; } = null!;
+
+        public string Phone { get; set; } = null!;
+
         public Address HeadquarterAddress { get; set; } = null!;
 
         public List<Employee> Employees { get; set; } = null!;

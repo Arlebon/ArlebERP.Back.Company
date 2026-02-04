@@ -19,16 +19,20 @@ namespace ArlebERP.Company.DAL.Database.Configs
                 .ValueGeneratedOnAdd();
 
             builder.Property(e => e.Firstname)
-                .IsRequired();
+                .IsRequired()
+                .HasMaxLength(255);
 
             builder.Property(e => e.Lastname)
-                .IsRequired();
+                .IsRequired()
+                .HasMaxLength(255);
 
             builder.Property(e => e.Email)
-                .IsRequired();
+                .IsRequired()
+                .HasMaxLength(255);
 
             builder.Property(e => e.Phone)
-                .IsRequired();
+                .IsRequired()
+                .HasMaxLength(15);
 
             builder.OwnsOne(e => e.Address, a =>
             {

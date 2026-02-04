@@ -8,5 +8,6 @@ namespace ArlebERP.Company.DAL.Repositories.Interfaces
 {
     public interface IEmployeeRepository : IBaseRepository<Employee>
     {
+        public Employee? GetByUserId(int userId);
     }
 }

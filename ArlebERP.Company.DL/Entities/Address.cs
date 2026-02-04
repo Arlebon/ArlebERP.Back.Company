@@ -16,7 +16,7 @@ namespace ArlebERP.Company.DL.Entities
 
         public string Country { get; set; } = null!;
 
-        public string? BoxNumber { get; set; };
+        public string? BoxNumber { get; set; }
 
     }
 }

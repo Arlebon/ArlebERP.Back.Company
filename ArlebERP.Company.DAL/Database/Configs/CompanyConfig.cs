@@ -28,6 +28,14 @@ namespace ArlebERP.Company.DAL.Database.Configs
                 .IsRequired()
                 .HasMaxLength(20);
 
+            builder.Property(c => c.Email)
+                .IsRequired()
+                .HasMaxLength(255);
+
+            builder.Property(c => c.Phone)
+                .IsRequired()
+                .HasMaxLength(15);
+
             builder.OwnsOne(c => c.HeadquarterAddress, a =>
             {
                 a.Property(a => a.Street)
