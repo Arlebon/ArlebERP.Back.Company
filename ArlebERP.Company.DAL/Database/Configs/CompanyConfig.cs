@@ -49,6 +49,10 @@ namespace ArlebERP.Company.DAL.Database.Configs
                 a.Property(a => a.Country)
                     .IsRequired();
             });
+
+            builder.HasMany(c => c.Employees)
+                .WithOne(e => e.Company)
+                .HasForeignKey(e => e.CompanyId);
         }
     }
 }

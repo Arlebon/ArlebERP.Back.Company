@@ -2,6 +2,7 @@
 using ArlebERP.Company.DAL.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ArlebERP.Company.DAL.Migrations
 {
     [DbContext(typeof(ArlebERPCompanyContext))]
-    partial class ArlebERPCompanyContextModelSnapshot : ModelSnapshot
+    [Migration("20260206130749_SeederDone")]
+    partial class SeederDone
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

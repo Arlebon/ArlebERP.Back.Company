@@ -7,9 +7,9 @@ namespace ArlebERP.Company.API.Models.Global
     public class GlobalCreateFormDTO
     {
         [Required]
-        public CompanyFormDTO companyForm { get; set; } = null!;
+        public CompanyFormDTO CompanyForm { get; set; } = null!;
 
         [Required]
-        public EmployeeFormDTO adminForm { get; set; } = null!;
+        public EmployeeFormDTO AdminForm { get; set; } = null!;
     }
 }

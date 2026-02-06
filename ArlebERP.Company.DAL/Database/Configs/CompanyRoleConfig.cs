@@ -23,7 +23,13 @@ namespace ArlebERP.Company.DAL.Database.Configs
 
             builder.HasMany(r => r.Permissions)
                 .WithMany()
-                .UsingEntity(j => j.ToTable("CompanyRole_Permissions"));
+                .UsingEntity(j => j.ToTable("CompanyRole_Permissions").HasData(new { CompanyRoleId = 1, PermissionsId = 1 },
+                                                                               new { CompanyRoleId = 1, PermissionsId = 2 },
+                                                                               new { CompanyRoleId = 1, PermissionsId = 3 },
+                                                                               new { CompanyRoleId = 1, PermissionsId = 4 },
+                                                                               new { CompanyRoleId = 2, PermissionsId = 2 },
+                                                                               new { CompanyRoleId = 3, PermissionsId = 3 },
+                                                                               new { CompanyRoleId = 4, PermissionsId = 4 }));
         }
     }
 }

@@ -30,10 +30,10 @@ namespace ArlebERP.Company.API.Controllers
             }
 
             int userId = int.Parse(User.FindFirstValue(ClaimTypes.Sid)!);
-            Employee employee = form.adminForm.ToEmployee();
+            Employee employee = form.AdminForm.ToEmployee();
             employee.UserId = userId;
 
-            _companyService.Create(form.companyForm.ToCompany(), employee);
+            _companyService.Create(form.CompanyForm.ToCompany(), employee);
 
             return Created();
         }

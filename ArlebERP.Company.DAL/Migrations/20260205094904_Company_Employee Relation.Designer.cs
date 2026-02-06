@@ -2,6 +2,7 @@
 using ArlebERP.Company.DAL.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ArlebERP.Company.DAL.Migrations
 {
     [DbContext(typeof(ArlebERPCompanyContext))]
-    partial class ArlebERPCompanyContextModelSnapshot : ModelSnapshot
+    [Migration("20260205094904_Company_Employee Relation")]
+    partial class Company_EmployeeRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,28 +80,6 @@ namespace ArlebERP.Company.DAL.Migrations
                         .HasName("PK_CompanyRole");
 
                     b.ToTable("CompanyRole", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Admin"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Accountable"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Stock Manager"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "RH Manager"
-                        });
                 });
 
             modelBuilder.Entity("ArlebERP.Company.DL.Entities.Employee", b =>
@@ -169,32 +150,6 @@ namespace ArlebERP.Company.DAL.Migrations
                         .IsUnique();
 
                     b.ToTable("Permission", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Code = "GLO",
-                            Name = "Global Modifidcation"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Code = "ACC",
-                            Name = "Accounting"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Code = "STK",
-                            Name = "Stock"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Code = "RH",
-                            Name = "RH"
-                        });
                 });
 
             modelBuilder.Entity("CompanyRoleEmployee", b =>
@@ -225,43 +180,6 @@ namespace ArlebERP.Company.DAL.Migrations
                     b.HasIndex("PermissionsId");
 
                     b.ToTable("CompanyRole_Permissions", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            CompanyRoleId = 1,
-                            PermissionsId = 1
-                        },
-                        new
-                        {
-                            CompanyRoleId = 1,
-                            PermissionsId = 2
-                        },
-                        new
-                        {
-                            CompanyRoleId = 1,
-                            PermissionsId = 3
-                        },
-                        new
-                        {
-                            CompanyRoleId = 1,
-                            PermissionsId = 4
-                        },
-                        new
-                        {
-                            CompanyRoleId = 2,
-                            PermissionsId = 2
-                        },
-                        new
-                        {
-                            CompanyRoleId = 3,
-                            PermissionsId = 3
-                        },
-                        new
-                        {
-                            CompanyRoleId = 4,
-                            PermissionsId = 4
-                        });
                 });
 
             modelBuilder.Entity("ArlebERP.Company.DL.Entities.Company", b =>
