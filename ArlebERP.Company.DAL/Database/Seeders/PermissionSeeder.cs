@@ -14,7 +14,7 @@ namespace ArlebERP.Company.DAL.Database.Seeders
             builder.HasData(new Permission { Id = 1, Name = "Global Modifidcation", Code = "GLO" },
                             new Permission { Id = 2, Name = "Accounting", Code = "ACC" },
                             new Permission { Id = 3, Name = "Stock", Code = "STK" },
-                            new Permission { Id = 4, Name = "RH", Code = "RH"});
+                            new Permission { Id = 4, Name = "HR", Code = "HR"});
         }
     }
 }

@@ -1,3 +1,4 @@
+using ArlebERP.Company.API.Middlewares;
 using ArlebERP.Company.BLL.Services;
 using ArlebERP.Company.BLL.Services.Interfaces;
 using ArlebERP.Company.DAL.Database;
@@ -21,6 +22,8 @@ builder.Services.AddDbContext<ArlebERPCompanyContext>(o => o.UseNpgsql(builder.C
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<ICompanyRoleRepository, CompanyRoleRepository>();
+builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
+builder.Services.AddScoped<ICompanyJoinRequestRepository, CompanyJoinRequestRepository>();
 
 builder.Services.AddScoped<ICompanyService ,CompanyService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
@@ -53,6 +56,8 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 

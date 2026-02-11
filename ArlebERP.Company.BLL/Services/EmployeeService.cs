@@ -1,4 +1,5 @@
-﻿using ArlebERP.Company.BLL.Services.Interfaces;
+﻿using ArlebERP.Company.BLL.Exceptions.Employee;
+using ArlebERP.Company.BLL.Services.Interfaces;
 using ArlebERP.Company.DAL.Repositories.Interfaces;
 using ArlebERP.Company.DL.Entities;
 using System;
@@ -22,7 +23,7 @@ namespace ArlebERP.Company.BLL.Services
 
             if (employee == null)
             {
-                throw new NotImplementedException();
+                throw new EmployeeCompanyNotFoundException();
             }
 
             return employee;

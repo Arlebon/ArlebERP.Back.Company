@@ -37,5 +37,16 @@ namespace ArlebERP.Company.API.Controllers
 
             return Created();
         }
+
+        [HttpPost("join-company")]
+        [Authorize]
+        public ActionResult JoinCompany([FromBody] string vatNumber)
+        {
+            int userId = int.Parse(User.FindFirstValue(ClaimTypes.Sid)!);
+
+            _companyService.CreateJoinRequest(vatNumber, userId);
+
+            return Created();
+        }
     }
 }

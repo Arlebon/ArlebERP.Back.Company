@@ -9,5 +9,7 @@ namespace ArlebERP.Company.BLL.Services.Interfaces
     public interface ICompanyService
     {
         public void Create(Entities.Company company, Employee employeeAdmin);
+
+        public void CreateJoinRequest(string vatNumber, int userId);
     }
 }

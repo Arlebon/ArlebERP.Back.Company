@@ -14,7 +14,8 @@ namespace ArlebERP.Company.DAL.Database.Seeders
             builder.HasData(new CompanyRole { Id = 1, Name = "Admin"},
                             new CompanyRole { Id = 2, Name = "Accountable"},
                             new CompanyRole { Id = 3, Name = "Stock Manager"},
-                            new CompanyRole { Id = 4, Name = "RH Manager"});
+                            new CompanyRole { Id = 4, Name = "HR Manager"},
+                            new CompanyRole { Id = 5, Name = "Employee"});
         }
     }
 }

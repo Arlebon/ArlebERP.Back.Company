@@ -5,24 +5,24 @@
 namespace ArlebERP.Company.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class SeederTest : Migration
+    public partial class AddEmployeeDefaultRole : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.InsertData(
-                table: "Permission",
-                columns: new[] { "Id", "Code", "Name" },
-                values: new object[] { 1, "GLO", "Global Modifidcation" });
+                table: "CompanyRole",
+                columns: new[] { "Id", "CompanyId", "Name" },
+                values: new object[] { 5, null, "Employee" });
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DeleteData(
-                table: "Permission",
+                table: "CompanyRole",
                 keyColumn: "Id",
-                keyValue: 1);
+                keyValue: 5);
         }
     }
 }
