@@ -11,5 +11,10 @@ namespace ArlebERP.Company.DAL.Repositories
     public class CompanyJoinRequestRepository : BaseRepository<CompanyJoinRequest>, ICompanyJoinRequestRepository
     {
         public CompanyJoinRequestRepository(ArlebERPCompanyContext context) : base(context) { }
+
+        public CompanyJoinRequest? GetByUserId(int userId)
+        {
+            return _set.FirstOrDefault(jr => jr.UserId == userId);
+        }
     }
 }

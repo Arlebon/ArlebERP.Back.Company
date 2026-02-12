@@ -7,6 +7,7 @@ using ArlebERP.Company.DL.Entities;
 using ArlebERP.Company.BLL.Services.Interfaces;
 using ArlebERP.Company.BLL.Exceptions.Company;
 using ArlebERP.Company.DL.Enums;
+using ArlebERP.Company.BLL.Exceptions.CompanyJoinRequest;
 
 namespace ArlebERP.Company.BLL.Services
 {
@@ -52,6 +53,11 @@ namespace ArlebERP.Company.BLL.Services
             if(company == null)
             {
                 throw new CompanyNotFoundException("Company with this VAT number doesn't exists");
+            }
+
+            if(_companyJoinRequestRepository.GetByUserId(userId) != null)
+            {
+                throw new CompanyJoinRequestAlreadyExistsException();
             }
 
             CompanyJoinRequest request = new CompanyJoinRequest

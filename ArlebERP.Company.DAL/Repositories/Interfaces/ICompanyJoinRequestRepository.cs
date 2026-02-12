@@ -8,5 +8,6 @@ namespace ArlebERP.Company.DAL.Repositories.Interfaces
 {
     public interface ICompanyJoinRequestRepository : IBaseRepository<CompanyJoinRequest>
     {
+        public CompanyJoinRequest GetByUserId(int userId);
     }
 }

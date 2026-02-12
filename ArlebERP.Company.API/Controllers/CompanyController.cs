@@ -1,4 +1,5 @@
 ﻿using ArlebERP.Company.API.Mappers;
+using ArlebERP.Company.API.Models.Company;
 using ArlebERP.Company.API.Models.Global;
 using ArlebERP.Company.BLL.Services.Interfaces;
 using ArlebERP.Company.DL.Entities;
@@ -40,11 +41,11 @@ namespace ArlebERP.Company.API.Controllers
 
         [HttpPost("join-company")]
         [Authorize]
-        public ActionResult JoinCompany([FromBody] string vatNumber)
+        public ActionResult JoinCompany([FromBody] JoinRequestVatDTO form)
         {
             int userId = int.Parse(User.FindFirstValue(ClaimTypes.Sid)!);
 
-            _companyService.CreateJoinRequest(vatNumber, userId);
+            _companyService.CreateJoinRequest(form.VatNumber, userId);
 
             return Created();
         }
